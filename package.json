@@ -1,6 +1,6 @@
 {
   "name": "redis-ccp-queue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple and lightweight Competing Consumers Pattern Queue",
   "license": "MIT",
   "author": "Sebastian Hildebrandt <hildebrandt@plus-innovations.com> (https://plus-innovations.com)",
