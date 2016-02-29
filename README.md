@@ -49,7 +49,7 @@ let c = new ccpq.Consumer('QueueKey', function (data, done) {  // create new con
 // This is the function (callback) that actually handles the messages from the queue. 
 // Put your worker-code inside this function. 
 function handleMessage(data, done) {
-  console.log('CONSUMER ' + id + ':');
+  console.log('CONSUMER:');
   console.log(data);
   done();                                  // call done() when message is handled
 }
@@ -108,21 +108,21 @@ generating messages 												processing messages
 | Producer 1 | --->
 --------------
 
---------------															--------------
-| Producer 2 | --->												--->	| Consumer 1 |
---------------															--------------
+--------------                                                          --------------
+| Producer 2 | --->                                             --->    | Consumer 1 |
+--------------                                                          --------------
 
---------------			-------------------------------------			--------------
-| Producer 3 | --->		| ------ ------	------       ------	|	--->	| Consumer 2 |
---------------			| | M5 | | M4 | | M3 | ....> | M1 |	|			--------------
-						| ------ ------ ------       ------ |
-	  .					-------------------------------------				  .
-	  .							 Message Queue (FIFO)						  .
-	  .																		  .
+--------------			-------------------------------------           --------------
+| Producer 3 | --->     | ------ ------	------       ------	|   --->    | Consumer 2 |
+--------------          | | M5 | | M4 | | M3 | ....> | M1 |	|           --------------
+                        | ------ ------ ------       ------ |
+	  .                 -------------------------------------                 .
+	  .                          Message Queue (FIFO)                         .
+	  .                                                                       .
 
---------------															--------------
-| Producer x | --->												--->	| Consumer n |
---------------															--------------
+--------------                                                          --------------
+| Producer x | --->                                             --->    | Consumer n |
+--------------                                                          --------------
 
 --------------
 | Producer y | --->
@@ -143,7 +143,7 @@ Use this approach when:
 
 | function        | Comments |
 | -------------- | ------- |
-| new ccpq.Producer(queueName [, options])  | expects an Queue-Name and (optional) Redis Options *)  |
+| new ccpq.Producer(queueName [, options])  | expects an queue name and (optional) Redis Options *)  |
 | push(data) | push data to the queue. This can be either a string or an JSON object |
 | shutdown() | disconnects safely from Redis |
 
@@ -151,7 +151,7 @@ Use this approach when:
 
 | function        | Comments |
 | -------------- | ------- |
-| new ccpq.Consumer(queueName, callback [, options]) | expects an Queue-Name, your callback function (where you handle/consume the data from the queue) and (optional) Redis Options *) |
+| new ccpq.Consumer(queueName, callback [, options]) | expects a queue name, your callback function (where you handle/consume the data from the queue) and (optional) Redis Options *) |
 | shutdown() | disconnects safely from Redis |
 
 #### *) Connect to Redis 
