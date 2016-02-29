@@ -1,0 +1,32 @@
+{
+  "name": "redis-ccp-queue",
+  "version": "1.0.0",
+  "description": "A simple and lightweight Competing Consumers Pattern Queue",
+  "license": "MIT",
+  "author": "Sebastian Hildebrandt <hildebrandt@plus-innovations.com> (https://plus-innovations.com)",
+  "homepage": "https://github.com/sebhildebrandt/redis-ccp-queue",
+  "main": "./lib/index.js",
+  "scripts": {
+    "producer": "node ./examples/producer.js",
+    "consumer1": "node ./examples/consumer.js 1",
+    "consumer2": "node ./examples/consumer.js 2",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redis queue",
+    "Competing Consumers Pattern Queue",
+    "message queue"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebhildebrandt/redis-ccp-queue.git"
+  },
+  "engines": {
+    "node": ">=4.0"
+  },
+  "dependencies": {
+    "eyes": "^0.1.8",
+    "inspect": "0.0.2",
+    "ioredis": "^1.15.1"
+  }
+}
