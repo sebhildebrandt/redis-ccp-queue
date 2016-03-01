@@ -188,7 +188,8 @@ If a processes fails to deliver with in a specified amount of time, an item coul
 
 | Version        | Date           | Comment  |
 | -------------- | -------------- | -------- |
-| 1.0.2          | 2016-02-29     | bug in dependencies |
+| 1.0.3          | 2016-03-01     | changed .gitignore |
+| 1.0.2          | 2016-03-01     | bug in dependencies |
 | 1.0.1          | 2016-02-29     | typos |
 | 1.0.0          | 2016-02-29     | initial release |
 
