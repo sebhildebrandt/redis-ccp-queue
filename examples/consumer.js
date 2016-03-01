@@ -1,7 +1,5 @@
 'use strict';
 
-let id = process.argv[2];
-
 const ccpq = require('../lib/index.js');
 
 let c = new ccpq.Consumer('test', function (data, done) {
@@ -9,7 +7,7 @@ let c = new ccpq.Consumer('test', function (data, done) {
 });
 
 function handleMessage(data, done) {
-  console.log('CONSUMER ' + id + ':');
+  console.log('CONSUMER:');
   console.log(data);
   setTimeout(function () {
     done()

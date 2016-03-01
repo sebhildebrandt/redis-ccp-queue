@@ -53,12 +53,6 @@ function handleMessage(data, done) {
   console.log(data);
   done();                                  // call done() when message is handled
 }
-
-// add the following lines to your consumer to safely disconnect from Redis
-process
-  .once('SIGINT', c.shutdown)
-  .once('SIGTERM', c.shutdown);
-
 ```
 
 Within your callback, you need to call the done() function, to let the `consumer` know, that the you are finished with the 
@@ -79,13 +73,13 @@ npm run producer
 Then in the second command line window launch the first consumer with 
 
 ```
-npm run consumer1
+npm run consumer
 ```
 
 and immediately after then in the third command line window launch the second consumer with 
 
 ```
-npm run consumer2
+npm run consumer
 ```
 
 You should now see both consumers pulling from the queue. Each message is only handled by one of the consumers. 
@@ -187,10 +181,15 @@ This is the initial version of this package. At the moment, it really does, what
 But I am sure, there is quite a lot of room for improvement. I am happy to discuss any comments and suggestions. 
 Please feel free to contact me if you see any possibility of improvement!
 
+For the next major version I plan to implement a more reliable version where an additional list is used to track messages in transit. 
+If a processes fails to deliver with in a specified amount of time, an item could be moved back to the original queue for delivery. 
+
 ## Version history
 
 | Version        | Date           | Comment  |
 | -------------- | -------------- | -------- |
+| 1.0.2          | 2016-02-29     | bug in dependencies |
+| 1.0.1          | 2016-02-29     | typos |
 | 1.0.0          | 2016-02-29     | initial release |
 
 ## Comments
