@@ -188,6 +188,7 @@ If a processes fails to deliver with in a specified amount of time, an item coul
 
 | Version        | Date           | Comment  |
 | -------------- | -------------- | -------- |
+| 1.0.5          | 2016-03-03     | tiny bug fix |
 | 1.0.4          | 2016-03-03     | correct termination of consumer on SIGINT, SIGTERM |
 | 1.0.3          | 2016-03-01     | changed .gitignore |
 | 1.0.2          | 2016-03-01     | bug in dependencies |
