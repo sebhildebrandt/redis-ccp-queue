@@ -2,15 +2,15 @@
 
 const ccpq = require('../lib/index.js');
 
-let p = new ccpq.Producer('test');
-for (var i = 1; i <= 50; i++) {
+const p = new ccpq.Producer('test');
+for (let i = 1; i <= 50; i+=1) {
   p.push({ name: 'a', num: i });
 }
 
-p.size(function (size) {
+p.size((size) => {
   console.log(size)
 });
 
-setTimeout(function () {
+setTimeout(() => {
   p.shutdown();
 }, 2000);
