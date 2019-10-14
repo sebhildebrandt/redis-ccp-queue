@@ -24,7 +24,7 @@
     "node": ">=4.0"
   },
   "dependencies": {
-    "debug": "^2.2.0",
-    "ioredis": "^1.15.1"
+    "debug": "^4.1.0",
+    "ioredis": "^4.14.0"
   }
 }

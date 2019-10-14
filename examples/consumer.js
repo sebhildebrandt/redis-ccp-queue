@@ -2,17 +2,18 @@
 
 const ccpq = require('../lib/index.js');
 
-let c = new ccpq.Consumer('test', function (data, done) {
-  handleMessage(data, done)
-});
-
-function handleMessage(data, done) {
+const handleMessage = (data, done) => {
   console.log('CONSUMER:');
   console.log(data);
-  setTimeout(function () {
+  setTimeout(() => {
     done()
   }, 100 + Math.random() * 500);
 }
-setTimeout(function () {
+
+const c = new ccpq.Consumer('test', (data, done) => {
+  handleMessage(data, done)
+});
+
+setTimeout(() => {
   c.shutdown();
 }, 20000);
